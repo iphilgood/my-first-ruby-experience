@@ -11,7 +11,14 @@ class Cd
   end
   
   def number_of_released_cds
-    "#{self.artist.name} ".yellow + "hat bisher".blue + " #{@releases} ".red + "CD's released...".blue
+    "#{@artist.name} ".yellow + "hat bisher".blue + " #{@releases} ".red + "CD's released...".blue
+  end
+  
+  def list_all_tracks
+    tracks.each do |track|
+      puts "#{track[:name]} -- #{track[:length]}"
+    end
+    # tracks.each { |track| puts "#{track[:name]} -- #{track[:length]}" }
   end
   
 end
