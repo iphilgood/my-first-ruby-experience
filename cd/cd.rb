@@ -1,4 +1,5 @@
 class Cd
+  # @@plays = 0
   attr_accessor :title, :genre, :artist, :releases, :tracks
     
   def initialize(title, genre, artist_name, releases, tracks)
@@ -14,11 +15,29 @@ class Cd
     "#{@artist.name} ".yellow + "hat bisher".blue + " #{@releases} ".red + "CD's released...".blue
   end
   
-  def list_all_tracks
-    tracks.each do |track|
-      puts "#{track[:name]} -- #{track[:length]}"
+  def show_all_tracks
+    my_tracks = []
+    @tracks.each do |track|
+      my_tracks << "#{track[:number]}. #{track[:name]} -- #{track[:duration]} seconds"
     end
-    # tracks.each { |track| puts "#{track[:name]} -- #{track[:length]}" }
+    my_tracks.join("\n")
+  end
+
+  # Wenn so, dann Methodenaufruf ohne puts
+  # def show_all_tracks
+  #   @tracks.each do |track|
+  #     puts "#{track[:name]} -- #{track[:length]}"
+  #   end
+  # end
+  
+  # def play
+  #   @plays += 1
+  #   @@plays += 1
+  #   "This song: #@plays plays. Total #@@plays plays."
+  # end
+  
+  def durationInMinutes
+    "This LP takes #{@duration/60} minutes"
   end
   
 end
