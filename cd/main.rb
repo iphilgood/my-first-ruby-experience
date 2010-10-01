@@ -7,6 +7,7 @@ peachfideel = Cd.new('Peachfideel', 'Comedy', 'Peach Weber', 16, [{ :number => 1
 # summernachtstroum = Cd.new('Summernachtstroum', 'Hip Hop', 'Eldorado FM', 3, [{ :number => 1, :name => "Intro" }, { :number => 2, :name => "Umuts" }, { :number => 3, :name => "Ka Ching" }])
 summernachtstroum = KaraokeCd.new('Summernachtstroum', 'Hip Hop', 'Eldorado FM', 3, [{ :number => 1, :name => "Intro", :duration => 120 }, { :number => 2, :name => "Umuts", :duration => 120 }, { :number => 3, :name => "Ka Ching", :duration => 120 }], "And now, the ..." )
 
+
 puts "*".cyan*20
 puts peachfideel.artist.name
 puts peachfideel.title
@@ -21,3 +22,4 @@ puts summernachtstroum.number_of_released_cds
 puts summernachtstroum.show_all_tracks
 puts summernachtstroum.lyrics
 puts "*".cyan*20
+
