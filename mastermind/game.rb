@@ -8,10 +8,6 @@ class Game
     @matchers = []
   end
   
-  def run
-    puts @secret.inspect  
-  end
-  
   def next_entering(guess)
     @current_matcher = Matcher.new(guess)
     @matchers << @current_matcher
@@ -21,7 +17,14 @@ class Game
     @current_matcher.match?(@secret)
   end
   
-  def number_of_matchers
-    puts @matchers.size
+  def display_position_matching
+    puts "Deine Eingaben:"
+    @current_matcher.results.each_with_index do |result, index|
+      if result
+        puts "#{index+1}. Position: Richtig getippt"
+      else
+        puts "#{index+1}. Position: Falsch getippt"
+      end
+    end
   end
 end
