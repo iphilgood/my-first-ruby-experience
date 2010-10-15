@@ -5,7 +5,11 @@ class Secret
   attr_accessor :positions
   
   def initialize
-    @positions = [Color.new(randomize), Color.new(randomize), Color.new(randomize)]
+    @positions = []
+    
+    (1..Game::POSITION_COUNT).step do
+      @positions << Color.new(randomize)
+    end
   end
   
   private

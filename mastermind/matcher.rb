@@ -2,7 +2,7 @@ require 'color'
 
 class Matcher
   
-  attr_accessor :position_1, :position_2, :position_3, :results, :positions
+  attr_accessor :results, :positions
   
   def initialize(guess)
     @results = []
@@ -10,12 +10,12 @@ class Matcher
     @position_array = guess.split(' ')
 
     
-    if @position_array.size == 3
+    if @position_array.size == Game::POSITION_COUNT
       @position_array.each do |position|
         @positions << Color.new(position)
       end
     else
-      raise "Wrong number of positions."
+      raise "I SAID #{Game::POSITION_COUNT} NUMBERS!"
     end
     
   end
@@ -30,6 +30,7 @@ class Matcher
   
   private
   def are_all_positions_correct?
-    @results == [true, true, true]
+    win_condition = Array.new(Game::POSITION_COUNT, true)
+    @results == win_condition
   end
 end

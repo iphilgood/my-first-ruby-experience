@@ -2,6 +2,8 @@ require 'secret'
 require 'matcher'
 
 class Game
+  POSITION_COUNT = 4
+  
   def initialize
     @secret = Secret.new
     @current_matcher = nil
