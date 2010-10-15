@@ -8,12 +8,7 @@ class Secret
     @positions = []
     
     (1..Game::POSITION_COUNT).step do
-      @positions << Color.new(randomize)
+      @positions << Color.new(Color::AVAILABLE_COLORS[rand(3)])
     end
-  end
-  
-  private
-  def randomize
-    rand(3)+1
   end
 end

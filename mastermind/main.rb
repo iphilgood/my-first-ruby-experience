@@ -6,7 +6,7 @@ game = Game.new
 
 step = 1
 game_over = true
-puts "Please enter #{Game::POSITION_COUNT} numbers. Between each number insert a space:"
+puts "Please enter these colors: #{Color::AVAILABLE_COLORS.map {|color| color.send(color)}.join(', ')} numbers. Between each number insert a space:"
 
 while step <= 5
   game.next_entering(gets)
@@ -14,7 +14,7 @@ while step <= 5
     step = 6
     game_over = false
   else
-    game.display_position_matching
+    game.display_position_or_color_matching
     puts "***************"
     puts "Try again!"
     puts "***************"

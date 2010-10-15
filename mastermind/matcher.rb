@@ -27,10 +27,27 @@ class Matcher
     are_all_positions_correct?
   end
   
+  def display_position_or_color_matching
+    display_correct_colors_at_right_position
+    display_correct_colors_at_wrong_position
+  end
+  
   
   private
   def are_all_positions_correct?
     win_condition = Array.new(Game::POSITION_COUNT, true)
     @results == win_condition
+  end
+  
+  def display_correct_colors_at_right_position
+    @results.each_with_index do |result, index|
+      puts "black" if result
+    end
+  end
+  
+  def display_correct_colors_at_wrong_position
+    # puts @positions.inspect
+    # check_matcher = @results
+    # check_secret = 
   end
 end

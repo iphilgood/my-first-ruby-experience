@@ -19,14 +19,17 @@ class Game
     @current_matcher.match?(@secret)
   end
   
-  def display_position_matching
-    puts "Deine Eingaben:"
-    @current_matcher.results.each_with_index do |result, index|
-      if result
-        puts "#{index+1}. Position: Richtig getippt"
-      else
-        puts "#{index+1}. Position: Falsch getippt"
-      end
-    end
+  # def display_position_matching
+  #   puts "Deine Eingaben:"
+  #   @current_matcher.results.each_with_index do |result, index|
+  #     if result
+  #       puts "#{index+1}. Position: Richtig getippt"
+  #     else
+  #       puts "#{index+1}. Position: Falsch getippt"
+  #     end
+  #   end
+  
+  def display_position_or_color_matching
+    @current_matcher.display_position_or_color_matching
   end
 end
