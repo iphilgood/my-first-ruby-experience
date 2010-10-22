@@ -30,6 +30,6 @@ class Game
   #   end
   
   def display_position_or_color_matching
-    @current_matcher.display_position_or_color_matching
+    @current_matcher.display_position_or_color_matching(@secret)
   end
 end

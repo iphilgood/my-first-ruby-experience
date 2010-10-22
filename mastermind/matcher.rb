@@ -27,9 +27,9 @@ class Matcher
     are_all_positions_correct?
   end
   
-  def display_position_or_color_matching
+  def display_position_or_color_matching(secret)
     display_correct_colors_at_right_position
-    display_correct_colors_at_wrong_position
+    display_correct_colors_at_wrong_position(secret)
   end
   
   
@@ -45,7 +45,7 @@ class Matcher
     end
   end
   
-  def display_correct_colors_at_wrong_position
+  def display_correct_colors_at_wrong_position(secret)
     # puts @positions.inspect
     # check_matcher = @results
     # check_secret = 
