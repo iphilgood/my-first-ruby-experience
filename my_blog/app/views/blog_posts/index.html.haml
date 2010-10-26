@@ -1,0 +1,10 @@
+#my_blog_posts Mein Blog
+-@blog_posts.each do |blog_post|
+  .blog_post
+    =blog_post.title
+    =link_to('Anzeigen', blog_post_path(blog_post))
+    =link_to('Editieren', edit_blog_post_path(blog_post))
+    =link_to('Löschen', blog_post_path(blog_post), :method => :delete)
+
+#new_entry 
+  =link_to('Neuer Eintrag', new_blog_post_path)
