@@ -1,5 +1,9 @@
 MyBlog::Application.routes.draw do
-  resources :blog_posts
+  resources :blog_posts do
+    resources :comments
+  end
+  
+  resource :home, :controller => 'home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +54,7 @@ MyBlog::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => "blog_posts#index"
+  root :to => "home#show"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

@@ -6,3 +6,20 @@
   =@blog_post.body
 
 =link_to 'Zurück zur Übersicht', blog_posts_path
+
+%h1="#{@blog_post.comments.size} #{@blog_post.comments.size <= 1 ? 'Kommentar' : 'Kommentare'}"
+-if @blog_post.comments.blank?
+  Kein Kommentar vorhanden
+-else
+  -@blog_post.comments.each_with_index do |comment, index|
+    .entry
+      ="#{index + 1}. Kommentar von #{comment.name}"
+      %br
+      =comment.message
+    
+=render :partial => 'new_comment', :locals => {:blog_post => @blog_post}
+
+.notice
+  =flash[:notice]
+.error
+  =flash.inspect
